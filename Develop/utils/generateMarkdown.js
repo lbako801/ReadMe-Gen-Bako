@@ -1,47 +1,28 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+//Below const enters user data from index.js to make a ReadME file!
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  const { title, description, installation, usage, contributions, tests, license, github, email } = data;
 
-  const readMe = 
-  `# ${title}  
-  ## Description  
+  const { title, description, install, usage, license, contributors, tests, github, email } = data
+
+  return `
+  ## ${title}
+  ## Description
   ${description}
-  ## Table of Contents
-  1. [Installation](#installation)
-  2. [Usage](#usage)
-  3. [Contributions](#contributions)
-  4. [Test Instructions](#test-instructions)
-  5. [License](#license)
-  6. [Questions](#questions)
-  <a name='installation'></a>
-  ## Installation  
-  ${installation}
-  <a name='usage'></a>
-  ## Usage  
+  ## Installation
+  ${install}
+  ## Usage
   ${usage}
-  <a name='contributions'></a>
-  ## Contributions  
-  ${contributions}  
-  <a name='test-instructions'></a>
-  ## Test Instructions  
+  ## Licenses
+  ![badge](https://img.shields.io/badge/license-${license}-brightgreen)
+  ## Contributors
+  ${contributors}
+  ## Tests
   ${tests}
-  <a name='license'></a>
-  ## License  
-  <a name='questions'></a>
-  ## Questions `
-  return readMe;
-}
+  ## Contact
+  ${github}](https://github.com/${github})
+  Or Email Me @ ${email}`
+};
+
+//Exports generateMarkdown const to be used in other files!
 
 module.exports = generateMarkdown;
